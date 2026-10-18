@@ -205,7 +205,7 @@ class ContinuityScoringTests(unittest.TestCase):
         self.assertEqual(self.api().compare_scores(scores)["status"],"noncomparable")
 
     def test_nonfinite_duration_is_unscored(self):
-        self.assertEqual(self.score(elapsed_seconds=float("nan"))["verdict"],"unscored')
+        self.assertEqual(self.score(elapsed_seconds=float("nan"))["verdict"],"unscored")
 
     def test_actions_after_finish_are_rejected(self):
         self.assertEqual(self.score(events=[*self.good(),dict(type="checkpoint",task="A",evidence_ref="x")])["verdict"],"unscored")
