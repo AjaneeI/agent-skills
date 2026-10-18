@@ -1,0 +1,46 @@
+name: Validate Agent Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "tests/**"
+      - ".github/workflows/validate-skills.yml"
+  pull_request:
+    paths:
+      - "skills/**"
+      - "tests/**"
+      - ".github/workflows/validate-skills.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out skills
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Retrieve official Agent Skills reference validator
+        run: |
+          git clone --quiet --depth 1 https://github.com/agentskills/agentskills.git /tmp/agentskills-standard
+          python -m pip install --disable-pip-version-check /tmp/agentskills-standard/skills-ref
+      - name: Validate all skills with official skills-ref
+        run: |
+          set -euo pipefail
+          count=0
+          for dir in skills/*/; do
+            test -f "${dir}SKILL.md"
+            skills-ref validate "$dir"
+            count=$((count + 1))
+          done
+          echo "Validated $count skill directories"
+      - name: Verify catalog structure and references
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
