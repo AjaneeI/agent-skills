@@ -42,4 +42,4 @@ For each stream report one of: **verified complete**, **blocked**, **failed with
 
 Higher-priority instructions, legal/security controls, the user's explicit limits, and experiment-specific protocols take precedence over this skill. A global safety stop is never bypassed by switching streams.
 
-Use [blocker policy](references/blocker-policy.md) for detailed decision rules and [scenario checklist](../../tests/scenarios.md) for behavioral verification.
+Use [blocker policy](references/blocker-policy.md) for detailed decision rules and [scenario checklist](https://github.com/AjaneeI/agent-skills/blob/main/tests/scenarios.md) for behavioral verification.
