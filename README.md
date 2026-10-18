@@ -6,7 +6,7 @@ Portable, constraints-first instructions for AI agents. Canonical source: this r
 
 **[Autonomous Execution Continuity](skills/autonomous-execution-continuity/SKILL.md)** — when one workstream is blocked, preserve its evidence and switch to independently authorized work. Never interpret a blocker as permission to bypass an approval, retry a frozen experiment, or defeat a security control.
 
-All skills are **instruction-only**: no executables, credentials, provider integrations, or permission grants. It does not make an agent autonomous by itself.
+All skills are **instruction-only**: no executables, credentials, provider integrations, or permission grants. Skills do not grant autonomy or runtime permissions by themselves.
 
 ### Ten additional skills (v0.1)
 
@@ -34,6 +34,21 @@ Each skill has its own trigger, bounded workflow, verification conditions, and f
 
 Keep one canonical copy in GitHub. Pin a commit or release for reproducible use, review upstream changes before synchronizing, and never give a skill broader permissions than the session already has.
 
+### GitHub CLI installation (recommended)
+
+With GitHub CLI 2.90+ and the reviewed [`gh skill install` command](https://cli.github.com/manual/gh_skill_install), use this example for project scope:
+
+```bash
+gh skill install AjaneeI/agent-skills autonomous-execution-continuity --agent codex --scope project --pin a7bc580e418436c59e6c4f1391d991104eb7cb0a
+gh skill list --agent codex --scope project
+```
+
+Replace `codex` with `claude-code`, `gemini-cli`, or `opencode` to target those clients. To apply the skill across your own projects, replace `--scope project` with `--scope user` after confirming that your installed CLI uses the correct user-scope discovery directory. The pinned commit is a reviewed catalog snapshot; update it deliberately.
+
+Install **all 11 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
+
+GitHub-hosted [installation smoke tests](https://github.com/AjaneeI/agent-skills/actions/runs/39088539870) passed for all four targets in disposable environments. Actual local client loading and behavioral compliance remain untested.
+
 ## Install locations (examples)
 
 | Client | Project-local skill directory | User/global directory |
@@ -47,7 +62,7 @@ Copy the **skill directory** (including `references/`), not the entire repositor
 
 ## Verification
 
-The skill has no runtime dependencies. Use the [scenario checklist](tests/scenarios.md) for behavioral evaluations in any agent. Format validation can be run with [skills-ref](https://agentskills.io/specification#validation): `skills-ref validate ./skills/autonomous-execution-continuity`.
+Skills have no runtime dependencies. Use the [scenario checklist](tests/scenarios.md) for behavioral evaluations in any agent. Format validation can be run with [skills-ref](https://agentskills.io/specification#validation): `skills-ref validate ./skills/autonomous-execution-continuity`.
 
 The scenario checklist is a **test specification**, not evidence that any agent has already passed it. Repeat trials with multiple agents and store evidence separately before making reliability claims.
 
