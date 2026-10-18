@@ -2,11 +2,28 @@
 
 Portable, constraints-first instructions for AI agents. Canonical source: this repository. Skills follow the [Agent Skills open specification](https://agentskills.io/specification).
 
-## Available skill
+## Skill library
 
 **[Autonomous Execution Continuity](skills/autonomous-execution-continuity/SKILL.md)** — when one workstream is blocked, preserve its evidence and switch to independently authorized work. Never interpret a blocker as permission to bypass an approval, retry a frozen experiment, or defeat a security control.
 
-This skill is **instruction-only**: no executables, credentials, provider integrations, or permission grants. It does not make an agent autonomous by itself.
+All skills are **instruction-only**: no executables, credentials, provider integrations, or permission grants. It does not make an agent autonomous by itself.
+
+### Ten additional skills (v0.1)
+
+| Skill | Distinct purpose |
+| --- | --- |
+| [constraints-first-execution](skills/constraints-first-execution/SKILL.md) | Translate a request into an authorized, minimum-complexity execution plan with explicit requirements, exclusions, stop rules, and acceptance criteria. |
+| [approval-boundary-management](skills/approval-boundary-management/SKILL.md) | Prepare precise human approval decisions without stalling unrelated work. |
+| [evidence-preservation](skills/evidence-preservation/SKILL.md) | Capture durable, inspectable provenance for engineering and AI experiments without rewriting failed runs. |
+| [one-shot-experiment-control](skills/one-shot-experiment-control/SKILL.md) | Plan and execute a preregistered, bounded experiment at most once with immutable inputs and honest negative outcomes. |
+| [evaluator-validity-audit](skills/evaluator-validity-audit/SKILL.md) | Audit whether a benchmark grader measures the intended behavior rather than superficial labels or leaked answers. |
+| [statistical-calibration-freeze](skills/statistical-calibration-freeze/SKILL.md) | Predeclare and calibrate a statistical analysis procedure before inspecting held-out experiment outcomes. |
+| [code-bloat-triage](skills/code-bloat-triage/SKILL.md) | Find unnecessary code, dependencies, abstractions, and speculative features without blindly minimizing lines of code. |
+| [safe-parallel-delegation](skills/safe-parallel-delegation/SKILL.md) | Delegate independent authorized tasks to multiple agents without shared-state conflicts, uncontrolled model spend, or permission escalation. |
+| [least-privilege-tool-boundaries](skills/least-privilege-tool-boundaries/SKILL.md) | Design and audit least-privilege agent tool capabilities. |
+| [verified-status-reconciliation](skills/verified-status-reconciliation/SKILL.md) | Reconcile engineering truth across repositories, project trackers, documentation, and communications without inflating completion claims. |
+
+Each skill has its own trigger, bounded workflow, verification conditions, and focused reference document. See [verification status](docs/verification-status.md) and [cross-agent evaluation playbook](tests/agent-evaluation-playbook.md). Agent tests are not implied by CI success.
 
 ## Use across agents
 
