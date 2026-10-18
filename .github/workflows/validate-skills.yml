@@ -6,11 +6,13 @@ on:
     paths:
       - "skills/**"
       - "tests/**"
+      - "evals/**"
       - ".github/workflows/validate-skills.yml"
   pull_request:
     paths:
       - "skills/**"
       - "tests/**"
+      - "evals/**"
       - ".github/workflows/validate-skills.yml"
   workflow_dispatch:
 
