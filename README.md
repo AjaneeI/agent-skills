@@ -17,6 +17,17 @@ This skill is **instruction-only**: no executables, credentials, provider integr
 
 Keep one canonical copy in GitHub. Pin a commit or release for reproducible use, review upstream changes before synchronizing, and never give a skill broader permissions than the session already has.
 
+## Install locations (examples)
+
+| Client | Project-local skill directory | User/global directory |
+| --- | --- | --- |
+| Codex | `.agents/skills/autonomous-execution-continuity/` | Follow your installed Codex version's skills documentation |
+| Claude Code | `.claude/skills/autonomous-execution-continuity/` | `~/.claude/skills/autonomous-execution-continuity/` |
+| Gemini CLI | `.gemini/skills/autonomous-execution-continuity/` or `.agents/skills/...` | `~/.gemini/skills/...` or `~/.agents/skills/...` |
+| OpenCode | `.opencode/skills/autonomous-execution-continuity/` or `.agents/skills/...` | `~/.config/opencode/skills/...` or `~/.agents/skills/...` |
+
+Copy the **skill directory** (including `references/`), not the entire repository into each location. Prefer copying/pinning a reviewed Git commit over fetching mutable remote instructions mid-session. Consult the official [OpenCode](https://opencode.ai/docs/skills), [Gemini CLI](https://geminicli.com/docs/cli/skills/), and [Codex](https://developers.openai.com/blog/skills-agents-sdk) docs when installing; client behavior changes by version. These are instructions, not proof of installation.
+
 ## Verification
 
 The skill has no runtime dependencies. Use the [scenario checklist](tests/scenarios.md) for behavioral evaluations in any agent. Format validation can be run with [skills-ref](https://agentskills.io/specification#validation): `skills-ref validate ./skills/autonomous-execution-continuity`.
