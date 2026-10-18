@@ -1,0 +1,50 @@
+name: Cross-client installation smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - ".github/workflows/install-smoke.yml"
+  pull_request:
+    paths:
+      - "skills/**"
+      - ".github/workflows/install-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install-skill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        agent: [codex, claude-code, gemini-cli, opencode]
+    steps:
+      - name: Check out canonical skill
+        uses: actions/checkout@v4
+      - name: Verify GitHub CLI supports Agent Skills
+        run: |
+          gh --version
+          gh skill install --help
+      - name: Install canonical skill into isolated project
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AGENT: ${{ matrix.agent }}
+        run: |
+          set -euo pipefail
+          mkdir -p "install-probes/${AGENT}"
+          cd "install-probes/${AGENT}"
+          git init -q
+          gh skill install AjaneeI/agent-skills autonomous-execution-continuity --agent "${AGENT}" --scope project --pin "${GITHUB_SHA}"
+          find . -path '*/autonomous-execution-continuity/SKILL.md' -print
+          test "$(find . -path '*/autonomous-execution-continuity/SKILL.md' -type f | wc -l)" -eq 1
+          test "$(find . -path '*/autonomous-execution-continuity/references/blocker-policy.md' -type f | wc -l)" -eq 1
+          gh skill list --agent "${AGENT}" --scope project
+      - name: Document test scope
+        run: |
+          echo "This verifies GitHub CLI installation into a disposable ${{ matrix.agent }} project."
+          echo "It does not run the actual agent or prove behavior or installation on the user's Mac."
