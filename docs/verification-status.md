@@ -34,3 +34,11 @@ Read the exact candidate PR for current tests and review evidence. The historica
 Four synthetic text-only baseline planning probes were captured before authoring and repeated with the skill context after authoring. These are wording-development exercises through a model helper, not installed-client runtime trials. No actual publication, tool behavior, model identity guarantee or productivity measurement is established. The baseline already rejected unsafe publication; no safety improvement is claimed. R1 omitted explicit license and security assessment, motivating the structured comparison requirements. See [governance scenarios](../tests/governance-scenarios.md).
 
 A repository commit does not install these skills on a device. Global memory settings, schedules, active evaluation branches and merge authority are unchanged. Self-review, separate model-assisted document review, human approval and native-client behavior tests are distinct forms of evidence.
+
+## Completion additions: 2026-10-21
+
+`evidence-based-verification` and `research-gate-management` add distinct claim-adjudication and prerequisite-management roles, plus a catalog routing guide, six static document-contract tests, and six synthetic scenario specifications. Existing skill bodies, frozen evaluation artifacts, and CI configuration are not changed.
+
+Read the exact candidate PR and its final verification receipt for current checks, document review, and publication readback. Earlier commits' validation does not establish the new candidate's results. The current catalog contains 15 instruction-only skills; publication and actual client activation remain separate.
+
+Four synthetic text-only baseline probes were captured before authoring and repeated with the skill text and reference afterward. Both conditions declined unsupported completion and premature experiments. These observations do not demonstrate a new safety benefit, live tool behavior, or a pass rate. The added records make scope/version binding, outcome separation, dependency ownership, and applicability explicit. [Scenario specifications](../tests/completion-scenarios.md) are not runtime results. Raw probe output remains outside the public candidate.

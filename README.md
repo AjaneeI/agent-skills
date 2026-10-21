@@ -32,7 +32,12 @@ Each skill has its own trigger, bounded workflow, verification conditions, and f
 
 New reusable non-personal skills are maintained here as open-source assets after review. Personal workflows and private configuration remain private. See [AGENTS.md](AGENTS.md), [contribution policy](CONTRIBUTING.md), [security handling](SECURITY.md) and [activation instructions](docs/skill-activation.md).
 
-The additions bring the catalog to **13 skills**. Historical eleven-skill validation and original-skill installation evidence do not validate or activate the additions. See [verification status](docs/verification-status.md).
+### Verification and research handoffs
+
+- **[evidence-based-verification](skills/evidence-based-verification/SKILL.md):** decide whether applicable observations support a specific claim; separate task completion, safety, authority, review and unknown effects.
+- **[research-gate-management](skills/research-gate-management/SKILL.md):** assess version-bound prerequisites and advance only eligible work without creating redundant approval hurdles.
+
+The candidate catalog contains **15 skills**. Use the [engineering routing guide](docs/skill-routing.md) to select the right skills and avoid duplicate responsibilities. Historical validation and installation results do not automatically cover or activate new additions. See [verification status](docs/verification-status.md).
 
 ## Use across agents
 
@@ -54,7 +59,7 @@ gh skill list --agent codex --scope project
 
 Replace `codex` with `claude-code`, `gemini-cli`, or `opencode` to target those clients. To apply the skill across your own projects, replace `--scope project` with `--scope user` after confirming that your installed CLI uses the correct user-scope discovery directory. The pinned commit is a reviewed catalog snapshot; update it deliberately.
 
-For the **whole catalog**, follow the [pinned activation procedure](docs/skill-activation.md): review a specific commit containing the desired skills, record its full SHA, and install complete folders from that revision. The historical single-skill pin above does not contain the two new governance skills. Do not use a floating whole-catalog installation as a reproducible deployment.
+For the **whole catalog**, follow the [pinned activation procedure](docs/skill-activation.md): review a specific commit containing the desired skills, record its full SHA, and install complete folders from that revision. The historical single-skill pin above does not contain the later governance or completion skills. Do not use a floating whole-catalog installation as a reproducible deployment.
 
 GitHub-hosted [installation smoke tests](https://github.com/AjaneeI/agent-skills/actions/runs/39088539870) passed for all four targets in disposable environments. Actual local client loading and behavioral compliance remain untested.
 
