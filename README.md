@@ -25,6 +25,15 @@ All skills are **instruction-only**: no executables, credentials, provider integ
 
 Each skill has its own trigger, bounded workflow, verification conditions, and focused reference document. See [verification status](docs/verification-status.md) and [cross-agent evaluation playbook](tests/agent-evaluation-playbook.md). Agent tests are not implied by CI success.
 
+## Standing engineering and publication rules
+
+- **[reuse-before-build](skills/reuse-before-build/SKILL.md):** compare at least three credible existing implementations before substantial infrastructure, including maintenance, security, license, compatibility, integration, ownership cost and custom-build exceptions.
+- **[safe-publication-review](skills/safe-publication-review/SKILL.md):** review the entire disclosure surface before a public upload, generalize private inputs, verify rights and maintain evidence-based claims.
+
+New reusable non-personal skills are maintained here as open-source assets after review. Personal workflows and private configuration remain private. See [AGENTS.md](AGENTS.md), [contribution policy](CONTRIBUTING.md), [security handling](SECURITY.md) and [activation instructions](docs/skill-activation.md).
+
+The additions bring the catalog to **13 skills**. Historical eleven-skill validation and original-skill installation evidence do not validate or activate the additions. See [verification status](docs/verification-status.md).
+
 ## Use across agents
 
 1. Install/copy the entire `skills/autonomous-execution-continuity/` folder into your agent's documented skills location, or configure that agent to read it from a checkout of this repository.
@@ -45,7 +54,7 @@ gh skill list --agent codex --scope project
 
 Replace `codex` with `claude-code`, `gemini-cli`, or `opencode` to target those clients. To apply the skill across your own projects, replace `--scope project` with `--scope user` after confirming that your installed CLI uses the correct user-scope discovery directory. The pinned commit is a reviewed catalog snapshot; update it deliberately.
 
-Install **all 11 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
+For the **whole catalog**, follow the [pinned activation procedure](docs/skill-activation.md): review a specific commit containing the desired skills, record its full SHA, and install complete folders from that revision. The historical single-skill pin above does not contain the two new governance skills. Do not use a floating whole-catalog installation as a reproducible deployment.
 
 GitHub-hosted [installation smoke tests](https://github.com/AjaneeI/agent-skills/actions/runs/39088539870) passed for all four targets in disposable environments. Actual local client loading and behavioral compliance remain untested.
 
