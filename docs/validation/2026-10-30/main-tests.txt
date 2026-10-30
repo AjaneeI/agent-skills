@@ -1,0 +1,7 @@
+test_every_skill_is_instruction_only_and_has_references (test_catalog.CatalogChecks.test_every_skill_is_instruction_only_and_has_references) ... ok
+test_scenarios_are_not_claimed_as_executed (test_catalog.CatalogChecks.test_scenarios_are_not_claimed_as_executed) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.004s
+
+OK
