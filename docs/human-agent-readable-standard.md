@@ -75,3 +75,11 @@ This is readable aloud, scannable in Markdown, and specific enough for an agent 
 This is an **authoring standard**, not a permission grant or an enforcement mechanism. Current user instructions, actual tool/runtime permissions, organizational requirements, and applicable law take precedence. Evaluate behavioral compliance using real execution traces, not merely the presence of this document.
 
 **Companion skill:** [Plugin-First Execution](../skills/plugin-first-execution/SKILL.md).
+
+## 2026-11-13 revision: context and evaluation precision
+
+When organizational context is consequential, identify its **Problem Owner** and **Context Curator** (or explicitly say unknown), its source authority, effective date, version, sensitivity, contradictions, and refresh trigger. Do not insert private organizational source text into public skills. For simple stable tasks a formal register is unnecessary.
+
+For testable instructions, specify both behavior that **must happen** (legitimate task completion) and behavior that **must not happen** (unauthorized actions). Include at least one ambiguous, adversarial, or multi-turn case when behavior can drift with tool state or user pressure. Record actual tool evidence separately from self-reported compliance.
+
+Apply the [Agent Evaluation Contract](agent-evaluation-contract.md). Structural checks can confirm the presence of examples and headings, **not** the correctness of an agent's decisions. The approved plugin-first fallback is risk-based: low-risk authorized non-sensitive read-only alternatives MAY be used when needed; sensitive accounts and consequential actions require prior approval, and access denials are never bypassed. Keep any existing automation pilot unchanged until separately approved.

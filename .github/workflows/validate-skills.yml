@@ -6,6 +6,8 @@ on:
     paths:
       - "skills/**"
       - "tests/**"
+      - "docs/**"
+      - "README.md"
       - ".github/workflows/validate-skills.yml"
   pull_request:
     paths:
