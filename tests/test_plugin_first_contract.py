@@ -25,7 +25,7 @@ class PluginFirstContractTests(unittest.TestCase):
         self.assertTrue(self.skill.startswith("---\n"))
         self.assertIn("\nname: plugin-first-execution\n", self.skill)
         self.assertIn("\ndescription:", self.skill)
-        self.assertIn('version: "1.1.0"', self.skill)
+        self.assertIn('version: "1.2.0"', self.skill)
 
     def test_related_markdown_paths_resolve(self):
         for ref in re.findall(r"\]\(([^)]+\.md)\)", self.skill):
