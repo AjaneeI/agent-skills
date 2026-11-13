@@ -8,7 +8,7 @@ Portable, constraints-first instructions for AI agents. Canonical source: this r
 
 All skills are **instruction-only**: no executables, credentials, provider integrations, or permission grants. Skills do not grant autonomy or runtime permissions by themselves.
 
-### Ten additional skills (v0.1)
+### Ten foundational skills (v0.1; revised v0.2)
 
 | Skill | Distinct purpose |
 | --- | --- |
@@ -23,13 +23,14 @@ All skills are **instruction-only**: no executables, credentials, provider integ
 | [least-privilege-tool-boundaries](skills/least-privilege-tool-boundaries/SKILL.md) | Design and audit least-privilege agent tool capabilities. |
 | [verified-status-reconciliation](skills/verified-status-reconciliation/SKILL.md) | Reconcile engineering truth across repositories, project trackers, documentation, and communications without inflating completion claims. |
 
-### Plugin-first routing and readable instructions (v1.0)
+### Plugin-first routing, context governance and readable instructions
 
-- **[Plugin-First Execution](skills/plugin-first-execution/SKILL.md)**: route account data through appropriate connected apps instead of unnecessary browser or computer navigation; define access scope, approval gates, handoffs, good/bad examples, and checks that can be verified.
+- **[Plugin-First Execution](skills/plugin-first-execution/SKILL.md)**: use purpose-built connectors first, permit only authorized low-risk read-only browser/computer fallback, and gate sensitive or consequential alternatives; test actual routing and outcomes.
+- **[Context Curation and Governance](skills/context-curation-and-governance/SKILL.md)**: keep organizational source context traceable, owned, current enough, and explicit about contradictions, privacy, and change propagation.
 - **[ChatGPT Work Risk-Based Fallback Policy](docs/work-plugin-routing-policy.md)**: approved default for low-risk read-only public browsing, with explicit approval gates for sensitive signed-in accounts and consequential actions; stricter automation pilots remain unchanged.
 - **[Human- and Agent-Readable Instruction Standard](docs/human-agent-readable-standard.md)**: standing authoring requirement for every skill, prompt, and Markdown instruction file. Each must be clear and actionable for both people and AI agents.
 
-These files are **instruction-only**, not installed permissions or proof of runtime compliance. Validate the new skill and test behavior before claiming a measured improvement in tokens, cost, or reliability.
+These files are **instruction-only**, not installed permissions or proof of runtime compliance. For regression design see [Agent Evaluation Contract](docs/agent-evaluation-contract.md) and [Audit Implementation and Validation](docs/implementation-roadmap.md). Validate the new skill and test behavior before claiming a measured improvement in tokens, cost, or reliability.
 
 Each skill has its own trigger, bounded workflow, verification conditions, and focused reference document. See [verification status](docs/verification-status.md) and [cross-agent evaluation playbook](tests/agent-evaluation-playbook.md). Agent tests are not implied by CI success.
 
@@ -53,7 +54,7 @@ gh skill list --agent codex --scope project
 
 Replace `codex` with `claude-code`, `gemini-cli`, or `opencode` to target those clients. To apply the skill across your own projects, replace `--scope project` with `--scope user` after confirming that your installed CLI uses the correct user-scope discovery directory. The pinned commit is a reviewed catalog snapshot; update it deliberately.
 
-Install **all 12 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
+Install **all 13 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
 
 GitHub-hosted [installation smoke tests](https://github.com/AjaneeI/agent-skills/actions/runs/39088539870) passed for all four targets in disposable environments. Actual local client loading and behavioral compliance remain untested.
 
@@ -82,3 +83,6 @@ The scenario checklist is a **test specification**, not evidence that any agent 
 - Do not introduce integrations or code unless an observed failure requires them.
 
 Licensed under MIT (see LICENSE).
+## ASSERT / ACS audit status (2026-11-13)
+
+All 12 existing instruction-only skills have targeted clarified examples and acceptance checks; a 13th context-governance skill was added. The shared [evaluation contract](docs/agent-evaluation-contract.md) distinguishes **permissible**, **impermissible**, and **ambiguous/multi-turn** behavior. The catalog CI validates structural requirements and synthetic assertion code, **not actual agent behavior**. Microsoft ASSERT/ACS names are used as a method reference only; no runtime enforcement is installed by this repository. Do not treat the existing automated scheduler/automation pilot as altered by these file updates.
