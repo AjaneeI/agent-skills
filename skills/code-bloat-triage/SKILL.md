@@ -38,3 +38,7 @@ A reviewer can justify each removal and confirm that supported behavior and trus
 **Ambiguous:** A dependency appears unused in production but is required for replayable experiment evidence. Mark it for owner review and retain until evidence establishes it is safe to remove.
 
 **Acceptance:** The change cites a real problem and preserved contract, limits scope, and has observed tests. Fewer lines of code are not by themselves proof of improvement.
+
+## Handoff and stop rule
+
+If the proposed simplification cannot be shown to preserve required behavior or source provenance, **stop that change** and ask the maintainer for a bounded decision. Continue only with other independently safe cleanups; never merge unverified deletions.

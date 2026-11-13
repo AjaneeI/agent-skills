@@ -38,3 +38,7 @@ No outcome-dependent interval choice, pseudo-replication, retroactive exclusions
 **Ambiguous:** A new missing-data pattern appears in held-out evaluation. Preserve the original confirmatory estimate and label any changed analysis as exploratory pending a new protocol.
 
 **Acceptance:** Unit of analysis, preregistered thresholds, simulations, held-out boundary, negative outcomes, and separation of exploratory from confirmatory findings are inspectable.
+
+## Handoff and stop rule
+
+If a preregistered analysis cannot meet validity thresholds, **stop confirmatory interpretation** and request methodology review. Continue only clearly labeled exploratory analysis that does not change held-out decisions or previously frozen findings.

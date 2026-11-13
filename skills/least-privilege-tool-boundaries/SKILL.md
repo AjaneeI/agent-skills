@@ -43,3 +43,7 @@ A natural-language skill defines intended behavior. A compatible runtime must st
 **Acceptance:** Show the enforced reject outcome and the permitted control outcome from tool/runtime traces, including ordering. Do not certify enforcement from policy text or mock trace alone.
 
 **Related:** [Agent evaluation contract](../../docs/agent-evaluation-contract.md).
+
+## Handoff and stop rule
+
+When required runtime enforcement is unavailable, **stop** the protected operation and report the missing control and actual capabilities. Ask the responsible owner before any access expansion; never present a prompt instruction as a verified security boundary.
