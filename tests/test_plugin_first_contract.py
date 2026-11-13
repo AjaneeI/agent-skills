@@ -56,10 +56,10 @@ class PluginFirstContractTests(unittest.TestCase):
         for tier in ("**Low**", "**Medium**", "**High**"):
             self.assertIn(tier, self.skill)
         for phrase in (
-            "explicit authorization",
+            "task-specific authorization",
             "read-only",
             "Gmail connector",
-            "This is an instruction policy",
+            "Instructions guide behavior",
             "Existing pilot exception",
         ):
             with self.subTest(phrase=phrase):
