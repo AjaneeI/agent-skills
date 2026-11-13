@@ -3,7 +3,7 @@ name: plugin-first-execution
 description: Route account and project tasks through purpose-built connectors before browser or computer use. Use for ChatGPT Work, automations, or agent workflows that access external services and need explicit read/write boundaries, handoffs, good and bad examples, and verifiable outcomes.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Plugin-First Execution
@@ -62,13 +62,29 @@ Use a functioning, dedicated connector for supported operations. Examples below 
 
 For tasks with explicit authorized writes, use only the named destination and verify the result. Do not create duplicate trackers merely to log progress.
 
-## Browser and computer fallback
+## Browser and computer fallback: risk-based policy
 
-**For signed-in/private services:** If the dedicated connector fails, lacks a necessary action, or is disconnected, stop that source-specific step and ask before switching to Browser or Computer Use. Continue independent authorized work; explain what remains unverified. Do not retry blindly.
+**Global Work default:** Allow low-risk read-only browser/computer fallback when necessary, but require approval before authenticated fallback for sensitive accounts or consequential actions. This does not change stricter task-specific rules.
 
-**For public websites:** Use web search or an available structured source first; browser navigation is acceptable only when needed and authorized.
+| Tier | Source examples | Fallback rule |
+| --- | --- | --- |
+| **Low** | Public documentation, public event pages, or expressly preapproved non-sensitive read-only sources | May use browser/computer when search or the designated connector is insufficient and existing permissions allow it. No login expansion or state changes. |
+| **Medium** | Signed-in Notion, Asana, HubSpot, Google Calendar/Drive, private project dashboards | Ask before switching from the connector to an authenticated browser/computer route unless the exact fallback was already approved for this task. |
+| **High** | Personal Gmail, health, finances, credentials, sensitive records or security settings | Ask before any authenticated GUI fallback; otherwise return verified partial results. |
 
-An exception is a deliberate **human handoff**, not an invitation to silently change tools.
+**All tiers:** Sending, publishing, changing sharing permissions, submitting applications, making purchases, or modifying external records require explicit authorization for that task. Classify both **information sensitivity** and **action impact**; a public page does not make a send or purchase low-risk. Read-only browser interfaces can have side effects: stop before state-changing clicks.
+
+**Fail closed:** A broken, missing, or insufficient connector does not grant another access method. Use another route only when the tier and existing authorization allow it. Do not silently switch to an authenticated browser/computer session. For public websites, prefer web search first. Keep a human approval handoff for medium/high exceptions.
+
+**Existing pilot exception:** The Networking & Application Follow-up automation retains its stricter ask-first instruction. This global skill neither edits nor weakens that automation.
+
+**Example allowed:** Search fails to show the full agenda of a public AI conference. Read the publicly accessible agenda in a browser, cite the result, and do not sign in or RSVP.
+
+**Example requiring approval:** The Gmail connector cannot access a personal attachment. Do not open signed-in Gmail in a browser. Explain what was verified and ask before switching access methods.
+
+**Example prohibited:** Calling a private financial account “low-risk” merely because only a balance is needed.
+
+This is an instruction policy, not a runtime permission grant or proof that ChatGPT Work has globally loaded it.
 
 ## Good output
 
