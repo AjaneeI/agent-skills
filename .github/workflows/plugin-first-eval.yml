@@ -7,6 +7,7 @@ on:
       - "docs/work-plugin-routing-policy.md"
       - "tests/plugin-first-routing-scenarios.md"
       - "tests/test_plugin_first_contract.py"
+      - "docs/evaluations/**"
       - ".github/workflows/plugin-first-eval.yml"
   workflow_dispatch:
 
@@ -27,7 +28,10 @@ jobs:
       - name: Retrieve Plugin Eval source
         run: |
           git clone --quiet --depth 1 --filter=blob:none --sparse https://github.com/openai/plugins.git /tmp/openai-plugins
+          git -C /tmp/openai-plugins fetch --quiet --depth 1 origin d420d13051bffe4543ed39e30fa46b87148e47dd
+          git -C /tmp/openai-plugins checkout --quiet --detach d420d13051bffe4543ed39e30fa46b87148e47dd
           git -C /tmp/openai-plugins sparse-checkout set plugins/plugin-eval
+          echo "Pinned Plugin Eval source: $(git -C /tmp/openai-plugins rev-parse HEAD)"
       - name: Run deterministic Plugin Eval checks
         shell: bash
         run: |
