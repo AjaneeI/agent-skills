@@ -62,8 +62,7 @@ A maintainer can approve a revision for merging only after:
 1. Reviewing CodeRabbit's actual comments, disagreements, and false positives.
 2. Confirming relevant GitHub Actions checks passed for the final commit.
 3. Confirming policy, examples, and the stricter automation exception remain intact.
-4. Clearly recording that the live Work read-only pilot has **not** been executed
-   until observable tool traces support it.
+4. Verifying that the approved skill revision completed an **observed read-only ChatGPT Work pilot**, with confirmed skill loading, exact revision, tool trace, and no prohibited browser or write actions. An unrun or unverified pilot is **BLOCKED/NOT_RUN** and does not satisfy this merge gate.
 5. Making a conscious merge decision. This document never authorizes auto-merge.
 
 **How to request review:** On PR #6, post `@coderabbitai review` once the
