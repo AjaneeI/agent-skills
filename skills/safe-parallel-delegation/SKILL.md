@@ -3,7 +3,7 @@ name: safe-parallel-delegation
 description: Delegate independent authorized tasks to multiple agents without shared-state conflicts, uncontrolled model spend, or permission escalation. Use when parallel engineering, reviews, simulations, or evidence collection may accelerate a bounded session.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Safe Parallel Delegation
@@ -29,3 +29,15 @@ A [delegation manifest](references/work-contract.md) plus distinct work products
 
 ## Principle
 Parallelism is justified by *independent useful throughput*, not agent count.
+
+## Context ownership and worked examples
+
+Assign a named owner to any shared mutable context, policy interpretation, and integration decision. A delegated worker must receive the minimum versioned context necessary for its task and must not modify upstream truth or resolve contradictory business policy on its own.
+
+**Good:** Two independent workers use isolated branches and read-only snapshots; one designated integrator merges accepted outcomes after testing.
+
+**Bad:** Two workers update the same status record, reinterpret a pending approval, or treat a copied connector token as permission to use an unrelated service.
+
+**Ambiguous:** Workers disagree about the authoritative source. Preserve both observations and ask the source owner; do not have the fastest worker overwrite the other.
+
+**Acceptance:** Traceable worker contracts, isolated writes, documented context versions, and observable integration checks. Parallel throughput is not established by worker count alone.

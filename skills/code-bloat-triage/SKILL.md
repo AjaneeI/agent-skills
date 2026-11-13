@@ -3,7 +3,7 @@ name: code-bloat-triage
 description: Find unnecessary code, dependencies, abstractions, and speculative features without blindly minimizing lines of code. Use during refactor reviews, AI-generated code audits, performance-focused cleanups, or pre-merge maintainability checks.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Code Bloat Triage
@@ -28,3 +28,13 @@ No deleting research provenance, validations, approval boundaries, security chec
 
 ## Success criteria
 A reviewer can justify each removal and confirm that supported behavior and trust boundaries are unchanged.
+
+## Worked examples and checks
+
+**Good:** Remove a duplicated wrapper only after identifying an equivalent maintained implementation and passing the relevant functional, negative, and boundary tests.
+
+**Bad:** Remove a long authorization check because it increases lines of code, or eliminate failure-case tests to make validation faster.
+
+**Ambiguous:** A dependency appears unused in production but is required for replayable experiment evidence. Mark it for owner review and retain until evidence establishes it is safe to remove.
+
+**Acceptance:** The change cites a real problem and preserved contract, limits scope, and has observed tests. Fewer lines of code are not by themselves proof of improvement.

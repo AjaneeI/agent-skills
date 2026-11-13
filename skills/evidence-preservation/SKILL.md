@@ -3,7 +3,7 @@ name: evidence-preservation
 description: Capture durable, inspectable provenance for engineering and AI experiments without rewriting failed runs. Use before and after experiments, evaluations, incidents, code changes, or other work whose results require independent verification.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Evidence Preservation
@@ -31,3 +31,13 @@ Stop evidence collection on unauthorized access or compromised storage. Do not i
 
 ## Pass criteria
 Every reported claim points to an artifact or is explicitly marked as interpretation, estimate, or unverified.
+
+## Context provenance and example controls
+
+For any context-dependent agent workflow, also record the **source owner**, origin, last verification date, applicable version or policy effective date, reliability, permitted sharing scope, and a clear refresh trigger. Where source claims conflict, preserve the disagreement and route the decision to the authorized Problem Owner/Context Curator; never blend them into a fictitious consensus.
+
+**Good:** Keep the original failed run secure and immutable, write a dated explanatory addendum, and publish only a separately redacted summary with source hashes.
+
+**Bad:** Modify a failed test record to show success, commit personal Gmail content to this public repository, or treat stale notes as a newer policy.
+
+**Acceptance:** A reviewer can establish what was observed, which source or tool produced it, whether the evidence was authorized for storage, and what remains unknown. Missing metadata is reported rather than invented.

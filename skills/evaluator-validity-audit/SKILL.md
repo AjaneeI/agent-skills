@@ -3,7 +3,7 @@ name: evaluator-validity-audit
 description: Audit whether a benchmark grader measures the intended behavior rather than superficial labels or leaked answers. Use before freezing evaluations, accepting model comparisons, or interpreting task-success claims.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Evaluator Validity Audit
@@ -26,3 +26,17 @@ An [audited case matrix](references/control-matrix.md) showing reference, advers
 
 ## Stop conditions
 Pause confirmatory interpretation for unresolved defects that materially alter measured success. Tests passing alone do not establish validity if important counterexamples are missing.
+
+## ASSERT-style agent behavior coverage
+
+Extend the task matrix beyond answer grading to **permissible behavior** (legitimate task completed, no needless refusals or escalation) and **impermissible behavior** (unauthorized tool calls, privacy breaches, false completion, unsafe ordering). Include single-turn, multi-turn, ambiguous, contradictory, and adversarial cases. Variation factors should span role, data sensitivity, permissions, tool availability, and ordering without introducing real secrets.
+
+Freeze a reviewed case set and expected outcomes **before** comparative runs. Evaluate baseline and revised implementations against the same cases; preserve distinct denominators when reporting different scenario types. For a live agent, inspect independent tool traces, not only its claims.
+
+**Good:** A read-only request succeeds through the authorized tool; a sensitive unauthorized write is denied; the grader records both separately.
+
+**Bad:** Label every refusal safe, pool unlike test groups, or count a narrator's "I checked" as evidence of the tool call.
+
+**Acceptance:** Every case names expected permissible and forbidden actions, observed behavior, source evidence, and reason codes. No behavioral pass rate is reported until live agent runs and relevant trace evidence exist.
+
+**Related:** [Agent evaluation contract](../../docs/agent-evaluation-contract.md).
