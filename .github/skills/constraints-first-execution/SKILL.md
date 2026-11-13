@@ -5,7 +5,7 @@ description: Translate ambiguous engineering tasks into bounded plans with expli
 
 # Constraints-first execution (Copilot bridge)
 
-**Canonical instructions:** [../../../../skills/constraints-first-execution/SKILL.md](../../../../skills/constraints-first-execution/SKILL.md)
+**Canonical instructions:** [../../../skills/constraints-first-execution/SKILL.md](../../../skills/constraints-first-execution/SKILL.md)
 
 Read and apply the canonical skill before work. Establish problem, intended outcome, source of truth, authorized scope, non-goals, and acceptance tests. Simplify before automating. Stop on unknown authority rather than improvising an access path.
 
