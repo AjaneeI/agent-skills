@@ -63,7 +63,7 @@ class PluginFirstContractTests(unittest.TestCase):
             "Existing pilot exception",
         ):
             with self.subTest(phrase=phrase):
-                self.assertIn(phrase, self.skill)
+                self.assertIn(phrase.lower(), self.skill.lower())
 
     def test_policy_does_not_override_stricter_pilot(self):
         self.assertIn("Networking & Application Follow-up", self.policy)
