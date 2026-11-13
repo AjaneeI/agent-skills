@@ -10,6 +10,8 @@
 
 ## Plugin Eval CLI availability probe (reproducible)
 
+Coordination scope note: PR #6 (`eval/plugin-first-routing-2026-11-13`) already carries pinned Plugin Eval static CI, a 14-scenario static suite, and a v1.4 candidate skill draft. This phase-1 artifact in PR #8 is intentionally limited to unmet gaps: reproducible local CLI availability evidence (`BLOCKED` here), deterministic fixture/harness checks, and explicit `NOT_RUN` live-behavior status until trace-backed execution is possible.
+
 Executed in this repository checkout:
 
 ```bash
