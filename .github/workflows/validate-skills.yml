@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "skills/**"
+      - ".github/skills/**"
+      - ".github/copilot-instructions.md"
       - "tests/**"
       - "docs/**"
       - "README.md"
@@ -12,7 +14,11 @@ on:
   pull_request:
     paths:
       - "skills/**"
+      - ".github/skills/**"
+      - ".github/copilot-instructions.md"
       - "tests/**"
+      - "docs/**"
+      - "README.md"
       - ".github/workflows/validate-skills.yml"
   workflow_dispatch:
 
@@ -34,7 +40,7 @@ jobs:
         run: |
           git clone --quiet --depth 1 https://github.com/agentskills/agentskills.git /tmp/agentskills-standard
           python -m pip install --disable-pip-version-check /tmp/agentskills-standard/skills-ref
-      - name: Validate all skills with official skills-ref
+      - name: Validate all canonical skills with official skills-ref
         run: |
           set -euo pipefail
           count=0
@@ -43,6 +49,19 @@ jobs:
             skills-ref validate "$dir"
             count=$((count + 1))
           done
-          echo "Validated $count skill directories"
-      - name: Verify catalog structure and references
+          echo "Validated $count canonical skill directories"
+      - name: Validate Copilot pilot skills with official skills-ref
+        run: |
+          set -euo pipefail
+          count=0
+          for dir in .github/skills/*/; do
+            test -f "${dir}SKILL.md"
+            skills-ref validate "$dir"
+            count=$((count + 1))
+          done
+          test "$count" -eq 3
+          echo "Validated $count Copilot pilot skill directories"
+      - name: Verify catalog structure and regression fixtures
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Verify Copilot bridge links and boundaries
+        run: python tests/check_copilot_integration.py
