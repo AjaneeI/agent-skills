@@ -16,12 +16,16 @@
 
 Those historical results must not be reported as validation of the new 13-skill revision.
 
-## Current branch: CI and static/mock checks
+## Current branch: passed format/static/mock CI
 
-- Format validation for all current skills: **pending new CI result**, not yet asserted as passed here.
-- Authoring structure and local Markdown links: checked by the revised `tests/test_catalog.py` when CI runs.
-- Synthetic evaluation contract and trace-assertion unit tests: checked by `tests/test_trace_evaluator.py`. Passing tests would only validate the **fixture schema and evaluator logic**, not agent compliance.
+- **PASSED:** Official Agent Skills reference-format validation for **all 13 current skill directories**, [2026-11-13 GitHub Actions run](https://github.com/AjaneeI/agent-skills/actions/runs/43518587099).
+- **PASSED:** Authoring structure and local Markdown links checked by the revised `tests/test_catalog.py` in the same run.
+- **PASSED (MOCKS ONLY):** The fixture-schema and synthetic trace-assertion unit tests in `tests/test_trace_evaluator.py` passed in the same run. This validates the **evaluator's selected mock examples**, not real agent compliance.
 - `.github/workflows/validate-skills.yml` now includes `docs/**` and README changes in PR/push triggers.
+
+## Current-branch packaging smoke
+
+- **PASSED IN EPHEMERAL CI:** Four-client installation smoke for the original `autonomous-execution-continuity` skill, [2026-11-13 GitHub Actions run](https://github.com/AjaneeI/agent-skills/actions/runs/43518587104). This does not install all 13 skills into actual agent environments, nor exercise live model behavior.
 
 ## Actual agent behavior: NOT RUN
 
@@ -29,7 +33,7 @@ No new live agent inference, tool-routing traces, held-out ASSERT benchmark, ACS
 
 ## Promotion gates
 
-1. [ ] New PR workflow validates **13** skills and static/mock tests.
+1. [x] New PR workflow validates **13** skills and static/mock tests ([evidence](https://github.com/AjaneeI/agent-skills/actions/runs/43518587099)).
 2. [ ] Human reviews versioned skill wording and risk-based fallback boundaries.
 3. [ ] Install a pinned reviewed revision in a real agent client and capture actual discovery.
 4. [ ] Freeze synthetic agent evaluation scenarios; collect real tool traces and both permissible/impermissible outcomes.
