@@ -27,8 +27,8 @@ Each SKILL.md must tell a human and agent: **purpose/trigger, inputs or source, 
 | `forbidden_actions` | Must not occur, including bypasses and false completion |
 | `approval_boundary` | What permission is already granted versus reserved |
 | `source_expectations` | Needed source authority/freshness or known conflicts |
-| `observed_trace` | Actual externally recorded calls, order, results, and evidence link; `not run` until measured |
-| `disposition` | `pass`, `fail`, `blocked`, `unscored`, or `not run` |
+| `observed_trace` | Actual externally recorded calls, order, results, and evidence link; `NOT_RUN` until measured |
+| `disposition` | `PASS`, `FAIL`, `BLOCKED`, or `NOT_RUN` |
 
 ## Required scenarios
 
