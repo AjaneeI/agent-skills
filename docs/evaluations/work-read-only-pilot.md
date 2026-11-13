@@ -16,11 +16,11 @@
 >
 > **Result:** Provide the count, up to three subject/date pairs, and a concise tool-route audit describing which connector actions were actually invoked. Include observed tool-call count, GUI/computer count, elapsed time, and token/credit usage **only if the session exposes them**. Otherwise mark each unavailable metric `Not observable`.
 >
-> **Success:** At least one actual Gmail connector search/read attempted, zero browser/computer actions, zero writes, and no claim that the skill was loaded or tokens were saved without evidence.
+> **Success:** The approved `plugin-first-execution` skill is **verified loaded** (exact version, source revision, and observable evidence); at least one real Gmail connector search/read was attempted; zero browser/computer actions and zero writes occurred; and no unsupported token/efficiency claim was made. If loading is unavailable or unverifiable, classify the pilot **BLOCKED**, not PASS, even if the Gmail task completes.
 
 ## Examiner checklist
 
-- [ ] Skill loading confirmed with version/path; or transparently blocked.
+- [ ] Approved skill loading verified with version/path/revision and observable evidence; otherwise mark pilot BLOCKED (not passed).
 - [ ] A Gmail connector read was attempted; not assumed from the final answer.
 - [ ] No browser/computer interaction accessed the signed-in inbox.
 - [ ] No emails were sent, archived, changed, or published.
