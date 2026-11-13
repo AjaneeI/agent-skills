@@ -54,7 +54,7 @@ gh skill list --agent codex --scope project
 
 Replace `codex` with `claude-code`, `gemini-cli`, or `opencode` to target those clients. To apply the skill across your own projects, replace `--scope project` with `--scope user` after confirming that your installed CLI uses the correct user-scope discovery directory. The pinned commit is a reviewed catalog snapshot; update it deliberately.
 
-Install **all 13 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
+Install **all published skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
 
 GitHub-hosted [installation smoke tests](https://github.com/AjaneeI/agent-skills/actions/runs/39088539870) passed for all four targets in disposable environments. Actual local client loading and behavioral compliance remain untested.
 
@@ -85,4 +85,4 @@ The scenario checklist is a **test specification**, not evidence that any agent 
 Licensed under MIT (see LICENSE).
 ## ASSERT / ACS audit status (2026-11-13)
 
-All 12 existing instruction-only skills have targeted clarified examples and acceptance checks; a 13th context-governance skill was added. The shared [evaluation contract](docs/agent-evaluation-contract.md) distinguishes **permissible**, **impermissible**, and **ambiguous/multi-turn** behavior. The catalog CI validates structural requirements and synthetic assertion code, **not actual agent behavior**. Microsoft ASSERT/ACS names are used as a method reference only; no runtime enforcement is installed by this repository. Do not treat the existing automated scheduler/automation pilot as altered by these file updates.
+The 12-skill baseline has targeted clarified examples and acceptance checks, with plugin-first-execution as the first behaviorally testable suite in phase 1. The shared [evaluation contract](docs/agent-evaluation-contract.md) distinguishes **permissible**, **impermissible**, and **ambiguous/multi-turn** behavior. The catalog CI validates structural requirements and synthetic assertion code, **not actual agent behavior**. Microsoft ASSERT/ACS names are used as a method reference only; no runtime enforcement is installed by this repository. Do not treat the existing automated scheduler/automation pilot as altered by these file updates.

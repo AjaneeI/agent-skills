@@ -12,7 +12,7 @@ class CatalogChecks(unittest.TestCase):
     def test_every_skill_has_authoring_contract_and_safe_files(self):
         names = set()
         folders = sorted(path for path in SKILLS.iterdir() if path.is_dir())
-        self.assertGreaterEqual(len(folders), 13)
+        self.assertGreaterEqual(len(folders), 12)
         for folder in folders:
             entry = folder / "SKILL.md"
             self.assertTrue(entry.is_file(), f"{entry} missing")
@@ -45,10 +45,11 @@ class CatalogChecks(unittest.TestCase):
     def test_catalog_documentation_and_test_fixture(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         verification = (ROOT / "docs" / "verification-status.md").read_text(encoding="utf-8")
-        self.assertIn("all 13 skills", readme.lower())
-        self.assertIn("13 skill directories", verification.lower())
+        self.assertIn("all published skills", readme.lower())
+        self.assertIn("12-skill baseline", verification.lower())
         self.assertIn("NOT RUN", verification)
         self.assertTrue((ROOT / "docs" / "agent-evaluation-contract.md").is_file())
+        self.assertTrue((ROOT / "tests" / "plugin-first-evaluation-status.md").is_file())
         cases = json.loads((ROOT / "tests" / "fixtures" / "plugin-first-cases.json").read_text(encoding="utf-8"))
         self.assertGreaterEqual(len(cases), 9)
 
