@@ -1,0 +1,54 @@
+name: Evaluate Plugin-First Skill
+
+on:
+  pull_request:
+    paths:
+      - "skills/plugin-first-execution/**"
+      - "docs/work-plugin-routing-policy.md"
+      - "tests/plugin-first-routing-scenarios.md"
+      - "tests/test_plugin_first_contract.py"
+      - "docs/evaluations/**"
+      - ".github/workflows/plugin-first-eval.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-plugin-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retrieve Plugin Eval source
+        run: |
+          git clone --quiet --depth 1 --filter=blob:none --sparse https://github.com/openai/plugins.git /tmp/openai-plugins
+          git -C /tmp/openai-plugins fetch --quiet --depth 1 origin d420d13051bffe4543ed39e30fa46b87148e47dd
+          git -C /tmp/openai-plugins checkout --quiet --detach d420d13051bffe4543ed39e30fa46b87148e47dd
+          git -C /tmp/openai-plugins sparse-checkout set plugins/plugin-eval
+          echo "Pinned Plugin Eval source: $(git -C /tmp/openai-plugins rev-parse HEAD)"
+      - name: Run deterministic Plugin Eval checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          CLI=/tmp/openai-plugins/plugins/plugin-eval/scripts/plugin-eval.js
+          node "$CLI" analyze "$GITHUB_WORKSPACE/skills/plugin-first-execution" --format markdown > plugin-first-static-eval.md
+          node "$CLI" explain-budget "$GITHUB_WORKSPACE/skills/plugin-first-execution" --format markdown > plugin-first-budget.md
+          cat plugin-first-static-eval.md
+          cat plugin-first-budget.md
+      - name: Run scenario and policy completeness checks
+        run: python -m unittest discover -s tests -p "test_plugin_first_contract.py" -v
+      - name: Upload static evaluation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugin-first-static-evaluation
+          path: |
+            plugin-first-static-eval.md
+            plugin-first-budget.md
+          if-no-files-found: warn
