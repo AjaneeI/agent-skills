@@ -22,6 +22,7 @@ Those historical results must not be reported as validation of the 12-skill base
 - **STATIC PASS:** Official Agent Skills reference-format validation for all current skill directories, [2026-11-13 GitHub Actions run](https://github.com/AjaneeI/agent-skills/actions/runs/43518587099).
 - **STATIC PASS:** Authoring structure and local Markdown links checked by `tests/test_catalog.py` in the same run.
 - **EXECUTABLE HARNESS PASS (synthetic only):** `tests/test_trace_evaluator.py` passed with fixture-schema and deterministic trace assertions in the same run.
+- **CURRENT PR BLOCKER:** PR #8 runs [43522516956](https://github.com/AjaneeI/agent-skills/actions/runs/43522516956) and [43522244244](https://github.com/AjaneeI/agent-skills/actions/runs/43522244244) are `action_required` (no jobs started), so they are tracked as approval/permission blockers until re-run.
 
 These checks validate structure and deterministic fixtures, not a real model's behavior.
 

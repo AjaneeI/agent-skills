@@ -34,10 +34,12 @@ Status: `BLOCKED` for Plugin Eval CLI execution until a real `plugin-eval` binar
 
 | Scope | Status | Evidence |
 | --- | --- | --- |
-| Catalog/static CI checks (structure + links + fixture schema tests) | `PASS` | `.github/workflows/validate-skills.yml`; latest run link in `docs/verification-status.md` |
+| Catalog/static CI checks (structure + links + fixture schema tests) | `BLOCKED` | Latest PR #8 workflow runs are `action_required`: https://github.com/AjaneeI/agent-skills/actions/runs/43522516956 and https://github.com/AjaneeI/agent-skills/actions/runs/43522244244 |
 | Deterministic harness unit tests (`tests/test_trace_evaluator.py`) | `PASS` | Local command and output: `python -m unittest discover -s tests -p 'test_trace_evaluator.py' -v` |
 | Plugin Eval CLI static report (`plugin-eval *`) | `BLOCKED` | `command not found` outputs above |
 | Real agent behavioral execution for PF-01..PF-12 | `NOT_RUN` | No live agent traces captured in this phase |
+
+CI blocker detail: the `action_required` runs did not start jobs (`total_jobs: 0`, `failed_jobs: 0`) and therefore are treated as approval/permission blockers, not passing tests.
 
 ## Trace-ready behavioral case results template
 
@@ -49,4 +51,6 @@ Status: `BLOCKED` for Plugin Eval CLI execution until a real `plugin-eval` binar
 
 - Do **not** mark behavioral cases `PASS` from prose-only claims, markdown quality, or green static CI.
 - Any cost/token savings claim must include observed instrumentation evidence; estimates must be labeled as estimated.
+- Cases requiring connector-failure/approval provenance are machine-checked through explicit `trace_flags` (for example PF-03/PF-04/PF-11), not inferred from empty `handoff` outcomes.
+- Self-reported approval or metric claims are non-authoritative for deterministic checks.
 - Keep the existing Networking & Application Follow-up automation pilot unchanged (stricter always-ask-first behavior).
