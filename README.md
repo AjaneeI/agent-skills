@@ -23,6 +23,13 @@ All skills are **instruction-only**: no executables, credentials, provider integ
 | [least-privilege-tool-boundaries](skills/least-privilege-tool-boundaries/SKILL.md) | Design and audit least-privilege agent tool capabilities. |
 | [verified-status-reconciliation](skills/verified-status-reconciliation/SKILL.md) | Reconcile engineering truth across repositories, project trackers, documentation, and communications without inflating completion claims. |
 
+### Plugin-first routing and readable instructions (v1.0)
+
+- **[Plugin-First Execution](skills/plugin-first-execution/SKILL.md)**: route account data through appropriate connected apps instead of unnecessary browser or computer navigation; define access scope, approval gates, handoffs, good/bad examples, and checks that can be verified.
+- **[Human- and Agent-Readable Instruction Standard](docs/human-agent-readable-standard.md)**: standing authoring requirement for every skill, prompt, and Markdown instruction file. Each must be clear and actionable for both people and AI agents.
+
+These files are **instruction-only**, not installed permissions or proof of runtime compliance. Validate the new skill and test behavior before claiming a measured improvement in tokens, cost, or reliability.
+
 Each skill has its own trigger, bounded workflow, verification conditions, and focused reference document. See [verification status](docs/verification-status.md) and [cross-agent evaluation playbook](tests/agent-evaluation-playbook.md). Agent tests are not implied by CI success.
 
 ## Use across agents
@@ -45,7 +52,7 @@ gh skill list --agent codex --scope project
 
 Replace `codex` with `claude-code`, `gemini-cli`, or `opencode` to target those clients. To apply the skill across your own projects, replace `--scope project` with `--scope user` after confirming that your installed CLI uses the correct user-scope discovery directory. The pinned commit is a reviewed catalog snapshot; update it deliberately.
 
-Install **all 11 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
+Install **all 12 skills** by using `gh skill install AjaneeI/agent-skills --all --agent codex --scope project`. Inspect every skill first, and pin the version for reproducible workflows.
 
 GitHub-hosted [installation smoke tests](https://github.com/AjaneeI/agent-skills/actions/runs/39088539870) passed for all four targets in disposable environments. Actual local client loading and behavioral compliance remain untested.
 
