@@ -13,6 +13,8 @@ on:
     paths:
       - "skills/**"
       - "tests/**"
+      - "docs/**"
+      - "README.md"
       - ".github/workflows/validate-skills.yml"
   workflow_dispatch:
 
