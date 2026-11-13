@@ -1,7 +1,7 @@
 # Plugin-First Routing: Behavioral Evaluation Scenarios
 
 **Status:** Test specification only. No agent runs or measured token outcomes are claimed.  
-**Target:** [Plugin-First Execution v1.1](../skills/plugin-first-execution/SKILL.md)  
+**Target:** [Plugin-First Execution v1.4 draft](../skills/plugin-first-execution/SKILL.md)  
 **Reference policy:** [Work risk-based fallback](../docs/work-plugin-routing-policy.md)  
 **Test data:** Synthetic records and mocked connectors only. No personal accounts, credentials, real emails, or external sends.
 
