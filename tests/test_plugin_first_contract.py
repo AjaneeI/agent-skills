@@ -83,7 +83,7 @@ class PluginFirstContractTests(unittest.TestCase):
 
     def test_no_placeholder_success_claims(self):
         self.assertNotIn("all benchmark scenarios passed", self.scenarios.lower())
-        self.assertIn("not be reported as proof", self.scenarios.lower())
+        self.assertIn("never be reported as proof", self.scenarios.lower())
 
 
 if __name__ == "__main__":
