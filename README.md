@@ -29,6 +29,7 @@ All skills are **instruction-only**: no executables, credentials, provider integ
 - **[Context Curation and Governance](skills/context-curation-and-governance/SKILL.md)**: keep organizational source context traceable, owned, current enough, and explicit about contradictions, privacy, and change propagation.
 - **[ChatGPT Work Risk-Based Fallback Policy](docs/work-plugin-routing-policy.md)**: approved default for low-risk read-only public browsing, with explicit approval gates for sensitive signed-in accounts and consequential actions; stricter automation pilots remain unchanged.
 - **[Human- and Agent-Readable Instruction Standard](docs/human-agent-readable-standard.md)**: standing authoring requirement for every skill, prompt, and Markdown instruction file. Each must be clear and actionable for both people and AI agents.
+- **[AI-Assisted PR Review and Merge Policy](docs/github-pr-review-and-merge-policy.md)**: autonomous, evidence-based decisions for routine validated PRs, with AI reviewer triage, delegated coding-agent PRs, and explicit high-risk hold conditions.
 
 These files are **instruction-only**, not installed permissions or proof of runtime compliance. For regression design see [Agent Evaluation Contract](docs/agent-evaluation-contract.md) and [Audit Implementation and Validation](docs/implementation-roadmap.md). Validate the new skill and test behavior before claiming a measured improvement in tokens, cost, or reliability.
 
