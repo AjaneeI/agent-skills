@@ -26,6 +26,7 @@ All skills are **instruction-only**: no executables, credentials, provider integ
 ### Plugin-first routing and readable instructions (v1.0)
 
 - **[Plugin-First Execution](skills/plugin-first-execution/SKILL.md)**: route account data through appropriate connected apps instead of unnecessary browser or computer navigation; define access scope, approval gates, handoffs, good/bad examples, and checks that can be verified.
+- **[ChatGPT Work Risk-Based Fallback Policy](docs/work-plugin-routing-policy.md)**: approved default for low-risk read-only public browsing, with explicit approval gates for sensitive signed-in accounts and consequential actions; stricter automation pilots remain unchanged.
 - **[Human- and Agent-Readable Instruction Standard](docs/human-agent-readable-standard.md)**: standing authoring requirement for every skill, prompt, and Markdown instruction file. Each must be clear and actionable for both people and AI agents.
 
 These files are **instruction-only**, not installed permissions or proof of runtime compliance. Validate the new skill and test behavior before claiming a measured improvement in tokens, cost, or reliability.
