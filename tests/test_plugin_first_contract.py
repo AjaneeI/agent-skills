@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL_PATH = ROOT / "skills" / "plugin-first-execution" / "SKILL.md"
 POLICY_PATH = ROOT / "docs" / "work-plugin-routing-policy.md"
 SCENARIO_PATH = ROOT / "tests" / "plugin-first-routing-scenarios.md"
+PILOT_PATH = ROOT / "docs" / "evaluations" / "work-read-only-pilot.md"
 
 
 class PluginFirstContractTests(unittest.TestCase):
@@ -20,6 +21,7 @@ class PluginFirstContractTests(unittest.TestCase):
         cls.skill = SKILL_PATH.read_text(encoding="utf-8")
         cls.policy = POLICY_PATH.read_text(encoding="utf-8")
         cls.scenarios = SCENARIO_PATH.read_text(encoding="utf-8")
+        cls.pilot = PILOT_PATH.read_text(encoding="utf-8")
 
     def test_skill_frontmatter_matches_directory(self):
         self.assertTrue(self.skill.startswith("---\n"))
@@ -80,6 +82,14 @@ class PluginFirstContractTests(unittest.TestCase):
         self.assertIn("PFR-14", self.scenarios)
         self.assertIn("No agent runs", self.scenarios)
         self.assertIn("Not measured", self.scenarios)
+
+    def test_work_pilot_requires_approved_immutable_commit_and_connector_only(self):
+        pilot = self.pilot.lower()
+        self.assertIn("approved commit sha", pilot)
+        self.assertIn("loaded revision must match", pilot)
+        self.assertIn("zero gmail reads through any other tool", pilot)
+        self.assertIn("without a recorded approved commit", pilot)
+        self.assertNotIn("approved github pr #6 branch", pilot)
 
     def test_no_placeholder_success_claims(self):
         self.assertNotIn("all benchmark scenarios passed", self.scenarios.lower())
