@@ -25,8 +25,8 @@ class CatalogChecks(unittest.TestCase):
             names.add(folder.name)
 
             # Enforces human/agent-readable markers, not semantic compliance.
-            self.assertRegex(body.lower(), r"(\*\*good\b|^## good\b|\*\*permissible\b)")
-            self.assertRegex(body.lower(), r"(\*\*bad\b|^## bad\b|\*\*impermissible\b)")
+            self.assertRegex(body.lower(), r"(?m)(\*\*good\b|^## good\b|\*\*permissible\b)")
+            self.assertRegex(body.lower(), r"(?m)(\*\*bad\b|^## bad\b|\*\*impermissible\b)")
             self.assertRegex(body.lower(), r"(acceptance|definition of done|pass criteria|success criteria|verification)")
             self.assertRegex(body.lower(), r"(permission|authoriz|approval|must not|prohibit)")
             self.assertRegex(body.lower(), r"(handoff|stop|blocked|escalat)")

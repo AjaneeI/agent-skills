@@ -1,0 +1,34 @@
+# CodeRabbit review policy for the agent-skills repository.
+# Keep reviews advisory. The current draft PR is reviewed on demand.
+# This is not a security gate or a substitute for observed agent behavior.
+
+language: en-US
+
+reviews:
+  profile: chill
+  high_level_summary: true
+  poem: false
+  request_changes_workflow: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_instructions:
+    - path: "skills/**/SKILL.md"
+      instructions: |
+        Review human and agent readability, valid frontmatter and links,
+        unambiguous trigger conditions, source routing, risk-based fallbacks,
+        and approval or handoff boundaries. Check that private Gmail and
+        sensitive data cannot be silently routed to browser/computer use.
+        Preserve stricter task-specific rules. Do not mistake instructions
+        or static scores for runtime enforcement or observed token savings.
+    - path: "tests/**"
+      instructions: |
+        Check test assertions against actual documented behavior, not just
+        expected phrases. Keep synthetic scenarios clearly unexecuted until
+        supported by agent tool traces. Flag accidental live account access,
+        paid benchmarks, duplicate tests, and invented pass results.
+    - path: ".github/workflows/**"
+      instructions: |
+        Check least-privilege permissions, reproducible pinned dependencies,
+        bounded execution and meaningful failures. Distinguish static
+        Plugin Eval analysis from real Work or Codex behavioral evaluation.

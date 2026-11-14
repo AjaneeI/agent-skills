@@ -1,7 +1,7 @@
 # ChatGPT Work: Plugin-First, Risk-Based Fallback Policy
 
 **Status:** User-approved proposed Work-wide policy (2026-11-13). Not automatically installed in Work.  
-**Skill:** [Plugin-First Execution](../skills/plugin-first-execution/SKILL.md) v1.1.0.  
+**Skill:** [Plugin-First Execution](../skills/plugin-first-execution/SKILL.md) v1.4.0 (draft, pending review).  
 **Exception:** The existing Networking & Application Follow-up automation retains its stricter **always ask first** rule.
 
 ## Objective
