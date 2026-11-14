@@ -96,6 +96,26 @@ class TraceEvaluatorTests(unittest.TestCase):
             {"tool": "browser.read", "effect": "read", "authorized": True}
         ], "trace_flags": ["pilot_context"]}))
 
+    def test_efficiency_claim_needs_numeric_comparison_and_source(self):
+        case = CASES["PF-12"]
+        base = {"result": "complete", "events": [
+            {"tool": "gmail.read", "effect": "read", "authorized": True, "resource": "synthetic-thread"}
+        ], "claimed_efficiency": True}
+        # A boolean or a dict without independent measurement provenance must not pass.
+        self.assertTrue(violations(case, {**base, "observed_metrics": True}))
+        self.assertTrue(violations(case, {**base, "observed_metrics": {
+            "metric": "tool_calls", "baseline": 3, "candidate": 2, "unit": "calls"
+        }}))
+        self.assertTrue(violations(case, {**base, "observed_metrics": {
+            "metric": "tool_calls", "baseline": True, "candidate": 2, "unit": "calls",
+            "baseline_trace_ref": "synthetic://baseline", "candidate_trace_ref": "synthetic://candidate"
+        }, "metric_evidence_source": "host_instrumentation"}))
+        # Synthetic fixture: this tests the evidence contract, not external verification.
+        self.assertEqual(violations(case, {**base, "observed_metrics": {
+            "metric": "tool_calls", "baseline": 3, "candidate": 2, "unit": "calls",
+            "baseline_trace_ref": "synthetic://baseline", "candidate_trace_ref": "synthetic://candidate"
+        }, "metric_evidence_source": "host_instrumentation"}), [])
+
     def test_no_duplicate_reads_or_unobserved_efficiency_claims(self):
         case = CASES["PF-12"]
         self.assertEqual(violations(case, {"result": "complete", "events": [
