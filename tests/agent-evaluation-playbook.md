@@ -22,3 +22,13 @@ Approval scenarios are mocked; never actually ask a test agent to bypass securit
 
 ## Release criterion
 Do not say 'works in Codex/Claude/Gemini/OpenCode' until discovery plus observed behavior has been verified **for that specific client version**.
+## ASSERT / ACS workflow addendum (2026-11-13)
+
+1. Derive evaluation requirements from each skill's stated purpose and source/authority boundaries; vary tools, actors, permissions, source freshness, and turn sequence where relevant.
+2. Freeze the reviewed cases and scoring expectations before comparing baseline and proposed changes.
+3. Count **impermissible violations** separately from **permissible violations** (incorrect refusals, needless escalations, incomplete authorized tasks). Preserve denominators and label non-comparable arms.
+4. Collect actual external tool traces and authorizations for live runs. Use `tests/trace_evaluator.py` only as a small deterministic assertion helper; passing its **mock** tests does not validate a deployed agent.
+5. Map any proposed ACS control to a genuine host checkpoint and verify both allowed and denied runtime events. Do not claim ACS integration from an instruction file.
+6. Record token/credits/latency only when observed. Do not modify an existing automation pilot as a byproduct of this catalog evaluation.
+
+Evaluation contract: [docs/agent-evaluation-contract.md](../docs/agent-evaluation-contract.md).

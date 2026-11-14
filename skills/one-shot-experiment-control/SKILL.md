@@ -3,7 +3,7 @@ name: one-shot-experiment-control
 description: Plan and execute a preregistered, bounded experiment at most once with immutable inputs and honest negative outcomes. Use for frozen AI benchmarks, one-attempt tool evaluations, and controlled comparisons where retries contaminate evidence.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # One-Shot Experiment Control
@@ -31,3 +31,13 @@ A run manifest with explicit **attempts consumed**, **attempts remaining**, evid
 
 ## Scientific boundary
 A standalone qualification run cannot establish cross-architecture superiority or generalized model reliability.
+
+## Worked examples
+
+**Good:** One preapproved attempt fails. Capture the raw error, decrement available attempts, mark the result failed/unscored as appropriate, and stop the frozen condition.
+
+**Bad:** Automatically retry the same held-out item, loosen limits, or reclassify an error as a success to complete the report.
+
+**Ambiguous:** An owner approves a changed harness after the failure. Treat it as a separately versioned experiment requiring its own exact invocation budget, not restoration of the original attempt.
+
+**Acceptance:** The manifest preserves original and changed conditions, actual attempt counts, hashes, and independent approval evidence. Test permitted preflights separately from prohibited duplicate experimental calls.

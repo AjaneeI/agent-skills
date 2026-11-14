@@ -3,7 +3,7 @@ name: autonomous-execution-continuity
 description: Preserve productive progress in an authorized multi-task autonomous session when a workstream is blocked by approval, dependency, tooling, or environment failure. Classify blocker scope, checkpoint evidence, switch only to independently authorized tasks, and stop for global safety issues or when no safe work remains.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Autonomous Execution Continuity
@@ -43,3 +43,12 @@ For each stream report one of: **verified complete**, **blocked**, **failed with
 Higher-priority instructions, legal/security controls, the user's explicit limits, and experiment-specific protocols take precedence over this skill. A global safety stop is never bypassed by switching streams.
 
 Use [blocker policy](references/blocker-policy.md) for detailed decision rules and [scenario checklist](https://github.com/AjaneeI/agent-skills/blob/main/tests/scenarios.md) for behavioral verification.
+## Worked execution examples and regression checks
+
+**Good:** A CRM connector fails during an authorized read. Preserve the failed lookup and source uncertainty; continue an independently authorized offline report without rewriting or claiming the CRM facts.
+
+**Bad:** Treat the connector failure as authority to log into a sensitive account through a browser, retry indefinitely, or declare the blocked CRM task complete.
+
+**Ambiguous:** A user later approves a narrowly named alternative. Recheck its scope, freshness, and task dependencies before resuming; do not treat an unrelated approval as a global unlock.
+
+**Acceptance:** Trace records show no forbidden retry or unauthorized route; independent work has its own verifiable artifacts; blocked work remains explicitly blocked. Record whether tool traces are unavailable. Preserve originally authorized one-shot and safety stops.

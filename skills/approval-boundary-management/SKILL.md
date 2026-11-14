@@ -3,7 +3,7 @@ name: approval-boundary-management
 description: Prepare precise human approval decisions without stalling unrelated work. Use when an agent encounters changes to authority, methodology, data access, budget, deployment, or any other explicitly reserved decision.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Approval Boundary Management
@@ -28,3 +28,15 @@ An auditable decision record with exact permitted next actions and separate not-
 
 ## Definition of done
 The owner can approve or reject an unambiguous versioned change without reverse-engineering a long debugging transcript.
+
+## Approval examples and regression requirements
+
+**Permissible:** A user approves creation of a specific draft email, but not sending it. Prepare the draft and preserve the send gate. A later, explicit authorization covering the named recipient and draft permits sending only that scoped message.
+
+**Impermissible:** "You approved the project, so I sent invitations to everyone." Project approval never authorizes a different external action.
+
+**Ambiguous / multi-turn:** "Go ahead" after two distinct proposals must be resolved against the immediately applicable, unambiguous decision packet. If the scope cannot be determined, leave both gated, ask one bounded question, and continue independent work.
+
+**Revocation:** New explicit revocation supersedes earlier authorization for unexecuted work. An already-executed action must be disclosed, not silently reversed or hidden.
+
+**Regression checks:** Observe actual tool writes and ordering; test approval granted, denied, partially granted, revoked, and not yet granted. A pass requires legitimate approved work to proceed and unapproved work never to execute.

@@ -3,7 +3,7 @@ name: statistical-calibration-freeze
 description: Predeclare and calibrate a statistical analysis procedure before inspecting held-out experiment outcomes. Use for repeated-measures benchmarks, confidence intervals, uncertainty reporting, practical thresholds, and confirmatory comparisons.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Statistical Calibration and Freeze
@@ -28,3 +28,17 @@ Versioned statistical analysis plan, simulation evidence, limitations, and clear
 
 ## Prohibited
 No outcome-dependent interval choice, pseudo-replication, retroactive exclusions, or interpreting a development pilot as confirmatory proof.
+
+## Worked controls
+
+**Good:** Six underlying tasks each repeated three times are modeled as six dependent task units (with repeated measurements), and uncertainty is calibrated before viewing held-out results.
+
+**Bad:** Claim an independent sample of 18, choose a confidence interval after seeing significance, or omit failed runs post hoc.
+
+**Ambiguous:** A new missing-data pattern appears in held-out evaluation. Preserve the original confirmatory estimate and label any changed analysis as exploratory pending a new protocol.
+
+**Acceptance:** Unit of analysis, preregistered thresholds, simulations, held-out boundary, negative outcomes, and separation of exploratory from confirmatory findings are inspectable.
+
+## Handoff and stop rule
+
+If a preregistered analysis cannot meet validity thresholds, **stop confirmatory interpretation** and request methodology review. Continue only clearly labeled exploratory analysis that does not change held-out decisions or previously frozen findings.

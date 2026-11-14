@@ -3,7 +3,7 @@ name: constraints-first-execution
 description: Translate a request into an authorized, minimum-complexity execution plan with explicit requirements, exclusions, stop rules, and acceptance criteria. Use before implementing a multi-step task or proposing new agent infrastructure.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Constraints-First Execution
@@ -31,3 +31,17 @@ A brief requirements-to-actions table with **must**, **may**, **must-not**, owne
 
 ## Acceptance
 Every proposed task has a named reason and an evidence condition; no new dependency or abstraction is justified solely by possible future needs.
+
+## Problem-first context contract (Kendall-derived)
+
+Before choosing an AI tool or implementation, record: **who** encounters the problem, **when/where** it appears, **what** currently fails, **why** it matters, existing workarounds, and a measurable **so that** outcome. Use a short user story if useful: "As a [role], when [situation], I need [capability] so that [outcome]."
+
+Identify the **Problem Owner** (accountable for the business problem and decisions), the **Context Curator** where ongoing source maintenance matters, and the implementing agent's delegated scope. A title or agent instruction does not confer organizational authority. Gather contradictory perspectives when material; do not silently pick one account.
+
+**Good:** A team reports inconsistent internal answers; first identify conflicting source policies, affected employees, decision owner, and a success criterion, then propose the smallest authorized context-validation pilot.
+
+**Bad:** "Deploy an enterprise chatbot and connect all systems" before identifying a problem, source owner, or access boundary.
+
+**Stop / handoff:** If the business problem or authority is too uncertain for a consequential action, return the smallest discovery question and independently safe preparatory work rather than selecting an irreversible solution.
+
+**Acceptance:** The proposed implementation traces to a real problem, source ownership, scope, and observable user outcome; no speculative infrastructure is introduced.
