@@ -1,0 +1,22 @@
+Operator transcription of tool observations; not an agent trace.
+
+macOS 27.0.1 (26A434), Darwin arm64; Python 3.14.7
+codex --version: codex-cli 0.155.0
+codex login status: Logged in using ChatGPT
+claude --version: 2.1.293 (Claude Code)
+opencode --version: PlatformError FileSystem.open, EPERM opening its existing log path; version not established
+command -v gemini: absent
+coderabbit --version: 0.9.1
+coderabbit auth status: authenticated; no review executed
+gh --version: 2.92.0 (2026-04-28)
+gh skill list --agent codex --scope project: exit 1, unknown flag --agent; available skill subcommands install, preview, publish, search, update
+
+Isolation probe (exit 71):
+/usr/bin/sandbox-exec -p '(version 1)(allow default)(deny network*)' /usr/bin/true
+sandbox-exec: sandbox_apply: Operation not permitted
+
+This minimal probe only checked whether a nested sandbox can start. It is not a complete isolation profile or behavioral trial. No attempt to rerun outside the parent sandbox or disable protections was made.
+
+Initial git clone inside parent sandbox: Could not resolve host github.com.
+Authorized network-enabled clone: succeeded.
+No model request, credential copy, paid fallback, or scenario was invoked.

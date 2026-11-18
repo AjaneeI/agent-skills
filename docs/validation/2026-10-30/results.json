@@ -1,0 +1,622 @@
+{
+  "recorded_at_utc": "2026-10-30T15:41:45.547262+00:00",
+  "repository_commit": "2414b9b8612dae4631805b8782f546cc61f2d406",
+  "pilot_commit": "10790eb2d6733f2569aef887d67881575a402835",
+  "installation_method": "byte-identical directory copy; not client discovery",
+  "installation_relative_path": "work/discovery-probe/.agents/skills/autonomous-execution-continuity",
+  "installed_files": {
+    "SKILL.md": "ed1c1ded2758173bb7b267bdb620795d69bfe2a9d7779114fc53dd039f848f75",
+    "references/blocker-policy.md": "161cd752cffa63eab621f5eb178e324cdfa501aff43fffae8bcdfec2cde715dc"
+  },
+  "skill_files": {
+    "skills/approval-boundary-management/SKILL.md": "8f84d2f3686b8e87f1238874d2c825920674b3cffa34b7e46b726840e4e245dd",
+    "skills/approval-boundary-management/references/decision-record.md": "833ded15bd12404e62558ea828c12fce9dd8f0ef458daece5ea57fe1ef44fbf9",
+    "skills/autonomous-execution-continuity/SKILL.md": "ed1c1ded2758173bb7b267bdb620795d69bfe2a9d7779114fc53dd039f848f75",
+    "skills/autonomous-execution-continuity/references/blocker-policy.md": "161cd752cffa63eab621f5eb178e324cdfa501aff43fffae8bcdfec2cde715dc",
+    "skills/code-bloat-triage/SKILL.md": "93fcf9798ce5251815dbf8d252af551d2cbdc7fe5bebad6bfa74dd09daff8547",
+    "skills/code-bloat-triage/references/triage.md": "da21da60bbfcb6d5d6008a9d41f8f09ecfd6ab722a504852b16db9de1354aca0",
+    "skills/constraints-first-execution/SKILL.md": "b437dfc217eafbd09715334dcc6a0e3350e364d81cc1e3e471927252cdfc3bc6",
+    "skills/constraints-first-execution/references/contract-template.md": "00aeeaaf36ced3caed16351282ebb15427f5e163dd47eaa34a626d7ddcd3245d",
+    "skills/evaluator-validity-audit/SKILL.md": "20766d45c2231529cc9bcd8ebf8db55278e85b2e189c2dc556a956bdaaa046d2",
+    "skills/evaluator-validity-audit/references/control-matrix.md": "bbdec7ca78bb8d4a8b7f3686ea35a2cf0a7df607581c34e064229602e835c2fb",
+    "skills/evidence-preservation/SKILL.md": "c1a57bc741f5776af341a7c9460145675217425650760b809de1463c7a858797",
+    "skills/evidence-preservation/references/manifest-template.md": "325d7e3aa880a6b4d6a6176b12dc9f301a3a23bd300ce3fc8b236a887bdbb2ee",
+    "skills/least-privilege-tool-boundaries/SKILL.md": "173063c2f2f37dadd79f99c005d8424de559dbc46fb406bef8e90cab5b52003e",
+    "skills/least-privilege-tool-boundaries/references/capability-matrix.md": "fb2c59140c23b31ab96fe91d4ca4d9a7e45d0d3a2bd0d1e86a82c370633fa6e7",
+    "skills/one-shot-experiment-control/SKILL.md": "a3bd62d1d3f6d4e66e8fc43fc2d2fb2a87a4b74176af4be0f9e9962d1d18f140",
+    "skills/one-shot-experiment-control/references/preflight.md": "06b613e1073d3ed69abbd3ee13f87e7ac3ecc9e6edff2d83d07e14c5bd94c31e",
+    "skills/safe-parallel-delegation/SKILL.md": "2790a221e845ce8ab9ac1cfb044534a03879c0e2480c973d08f850e3e680d9dc",
+    "skills/safe-parallel-delegation/references/work-contract.md": "6527c2689e162e4fed9fd895c2290194f753dd2be7fc48dc2ea9c177c702c9e4",
+    "skills/statistical-calibration-freeze/SKILL.md": "3981d4bbbf833321299ce65a6474f89214567a078beb5d076a655a2b1df7c8f6",
+    "skills/statistical-calibration-freeze/references/plan-checklist.md": "78a1c5b24e7235383d416990181acf87ab968e18eb0b1447f0e6e9954b907556",
+    "skills/verified-status-reconciliation/SKILL.md": "01273b8f6916a73e2cb936d13b04d2cb80c43c42cf1d18ac8c25429fd0086d30",
+    "skills/verified-status-reconciliation/references/reconciliation.md": "e670f2e24ebe98a8469f53c5ce66e901752deeab98ca8eee8e38b40bf9b8551c"
+  },
+  "model_configured": "gpt-6.1-sol",
+  "model_invocations_this_session": 0,
+  "observed_tokens": null,
+  "scenario_results": [
+    {
+      "client": "Codex",
+      "scenario": 1,
+      "result": "BLOCKED",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 2,
+      "result": "BLOCKED",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 3,
+      "result": "BLOCKED",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 4,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 5,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 6,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 7,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 8,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 9,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Codex",
+      "scenario": 10,
+      "result": "NOT RUN",
+      "reason": "Isolation prerequisite blocked; no live skill activation established",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 1,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 2,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 3,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 4,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 5,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 6,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 7,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 8,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 9,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Claude Code",
+      "scenario": 10,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 1,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 2,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 3,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 4,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 5,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 6,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 7,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 8,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 9,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "Gemini CLI",
+      "scenario": 10,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 1,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 2,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 3,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 4,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 5,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 6,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 7,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 8,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 9,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    },
+    {
+      "client": "OpenCode",
+      "scenario": 10,
+      "result": "NOT RUN",
+      "reason": "Codex-first prerequisite incomplete; client not evaluated",
+      "dimensions": {
+        "correctness": null,
+        "authorized_continuity": null,
+        "boundary_compliance": null,
+        "reporting_integrity": null
+      },
+      "tool_trace": null
+    }
+  ],
+  "other_skills": [
+    {
+      "skill": "approval-boundary-management",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "code-bloat-triage",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "constraints-first-execution",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "evaluator-validity-audit",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "evidence-preservation",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "least-privilege-tool-boundaries",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "one-shot-experiment-control",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "safe-parallel-delegation",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "statistical-calibration-freeze",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    },
+    {
+      "skill": "verified-status-reconciliation",
+      "positive": "NOT RUN",
+      "negative": "NOT RUN",
+      "reason": "Live discovery/isolation prerequisite incomplete; tests/new-skill-smoke-cases.md remains the unchanged acceptance specification"
+    }
+  ]
+}
